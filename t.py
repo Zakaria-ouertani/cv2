@@ -23,7 +23,7 @@ def detect_stains(existing_image, camera_index):
 
         # Define a threshold value for the match
         threshold = 0.8
-
+        cv2.imshow("Stain Detection", frame)
         # Check if the match exceeds the threshold
         if max_val > threshold:
             # Draw a rectangle around the area of the best match
@@ -32,7 +32,7 @@ def detect_stains(existing_image, camera_index):
             cv2.rectangle(frame, top_left, bottom_right, (0, 0, 255), 2)
 
             # Display the frame with the rectangle
-            cv2.imshow("Stain Detection", frame)
+            print("Stain detected.")
 
         else:
             print("No stains detected.")
